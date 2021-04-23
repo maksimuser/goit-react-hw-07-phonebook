@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import shortid from 'shortid';
 
-import actionsCreators from '../../redux/contacts/contacts-actions';
+import { changeFilter } from '../../redux/contacts/contacts-actions';
 import styles from './Filter.module.scss';
 
 class Filter extends Component {
@@ -43,8 +43,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onChange: evt =>
-    dispatch(actionsCreators.changeFilter(evt.currentTarget.value)),
+  onChange: evt => dispatch(changeFilter(evt.currentTarget.value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

@@ -1,3 +1,29 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "name": "Mango",
+      "number": "2342422234",
+      "id": 1
+    },
+    {
+      "name": "Ajax",
+      "number": "342424234234",
+      "id": 2
+    },
+    {
+      "name": "Kiwi",
+      "number": "23423423423",
+      "id": 3
+    },
+    {
+      "name": "Goodwin",
+      "number": "23423424222",
+      "id": 4
+    },
+    {
+      "name": "Tor",
+      "number": "234242424242",
+      "id": 5
+    }
+  ]
 }
