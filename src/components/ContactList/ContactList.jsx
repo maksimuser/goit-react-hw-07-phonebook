@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {
+  getVisibleContact,
   deleteContact,
   fetchContacts,
-} from '../../redux/contacts/contacts-operations';
+} from '../../redux/contacts';
+
 import ContactItem from '../ContactItem';
 import styles from './ContactList.module.scss';
 
@@ -40,18 +42,9 @@ ContactList.propTypes = {
   onDeleteContact: PropTypes.func.isRequired,
 };
 
-const getVisibleContact = (allContacts, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-  return allContacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter),
-  );
-};
-
 const mapStateToProps = state => {
-  const { items, filter } = state.contacts;
-
   return {
-    contacts: getVisibleContact(items, filter),
+    contacts: getVisibleContact(state),
   };
 };
 
